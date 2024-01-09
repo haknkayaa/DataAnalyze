@@ -4,7 +4,6 @@ document.getElementById('myTextarea').addEventListener('input', function () {
 });
 
 
-
 let idList = [];
 
 // create random light color without white, black and gray
@@ -68,7 +67,7 @@ function addNewIdentifier() {
     var cell_action = newRow.insertCell(7);
 
     // Add some text to the new cells
-    cell_no.innerHTML =  table.rows.length - 1;
+    cell_no.innerHTML = table.rows.length - 1;
     cell_label.innerHTML = '<input type="text" id="label" name="head" value="label" style="width: 100%; height: 28px;">';
     cell_color.innerHTML = '<input type="color" id="color" name="head" value="' + randomColor[Math.floor(Math.random() * randomColor.length)] + '" style="width: 100%; height: 28px;">';
     cell_startIndex.innerHTML = '<input type="number" id="startIndex" name="head" value="0" style="width: 40px; height: 28px;">';
@@ -85,16 +84,16 @@ function addNewIdentifier() {
 
 
     // Add an event listener for the change event
-    cell_color.getElementsByTagName('input')[0].addEventListener('change', function() {
+    cell_color.getElementsByTagName('input')[0].addEventListener('change', function () {
         changedValuesApplyChanges();
     });
-    cell_startIndex.getElementsByTagName('input')[0].addEventListener('input', function() {
+    cell_startIndex.getElementsByTagName('input')[0].addEventListener('input', function () {
         changedValuesApplyChanges();
     });
-    cell_endIndex.getElementsByTagName('input')[0].addEventListener('input', function() {
+    cell_endIndex.getElementsByTagName('input')[0].addEventListener('input', function () {
         changedValuesApplyChanges();
     });
-    cell_dataType.getElementsByTagName('select')[0].addEventListener('change', function() {
+    cell_dataType.getElementsByTagName('select')[0].addEventListener('change', function () {
         changedValuesApplyChanges();
     });
 }
@@ -139,7 +138,7 @@ function updateConvertedValue() {
 
     for (var i = 0; i < idList.length; i++) {
         var valueType = idList[i].dataType;
-        
+
         // substring
         var willConvertedValue = textArray.slice(idList[i].startIndex, idList[i].endIndex);
         var convertedValue = '';
@@ -152,10 +151,10 @@ function updateConvertedValue() {
             convertedValue = parseInt(convertedValue, 16);
         }
         else if (valueType == 'float') {
-            for(var j = 0; j < willConvertedValue.length; j++){
+            for (var j = 0; j < willConvertedValue.length; j++) {
                 convertedValue += willConvertedValue[j];
             }
-            
+
             var int = parseInt(convertedValue, 16);
             var buffer = new ArrayBuffer(4);
             var view = new DataView(buffer);
@@ -165,10 +164,10 @@ function updateConvertedValue() {
         else if (valueType == 'char') {
             convertedValue = convertedValue.charAt(0);
         }
-        else if(valueType == 'ascii'){
+        else if (valueType == 'ascii') {
             // example 41 42 = AB
             for (var j = 0; j < willConvertedValue.length; j++) {
-                convertedValue += String.fromCharCode(parseInt(willConvertedValue[j], 16)); 
+                convertedValue += String.fromCharCode(parseInt(willConvertedValue[j], 16));
             }
         }
 
@@ -239,4 +238,23 @@ function changedValuesApplyChanges() {
     console.log('[+] changedValuesApplyChanges');
 
     analyze();
+}
+
+
+
+var interval = setInterval(increment, 100);
+var current = 0;
+
+// call function when page loaded
+window.onload = function () {
+    function increment() {
+        current++;
+        $('i').html(current + '%');
+        if (current == 100) {
+            // show content
+            document.getElementById('content').style.display = 'block';
+            // hide loading
+            document.getElementById('loader').style.display = 'none';
+        }
+    }
 }
