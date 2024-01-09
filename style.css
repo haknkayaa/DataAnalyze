@@ -16,6 +16,10 @@
     --transparent-color: transparent;
 }
 
+.content{
+  display: none;
+}
+
 .loader,
 .loader span,
 .spinner {

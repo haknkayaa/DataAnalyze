@@ -240,21 +240,16 @@ function changedValuesApplyChanges() {
     analyze();
 }
 
-
-
-var interval = setInterval(increment, 100);
-var current = 0;
-
 // call function when page loaded
 window.onload = function () {
-    function increment() {
-        current++;
-        $('i').html(current + '%');
-        if (current == 100) {
-            // show content
-            document.getElementById('content').style.display = 'block';
-            // hide loading
-            document.getElementById('loader').style.display = 'none';
-        }
-    }
+
+    console.log('Page loaded');
+
+    setTimeout(function () {
+        console.log('Timeout');
+         // show content
+         document.getElementsByClassName('content')[0].style.display = 'block';
+         // hide loading
+         document.getElementsByClassName('loader')[0].style.display = 'none';
+    }, 2000);
 }
