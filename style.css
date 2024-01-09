@@ -1,0 +1,527 @@
+@import url('https://fonts.googleapis.com/css?family=Jura:300,400,500,600,700&subset=cyrillic,cyrillic-ext,latin-ext');
+
+:root {
+    --body-color: #89b1c4;
+    --primary-color: #00ebff;
+    --secondary-color: #ffae00;
+    --white-color: #fff;
+    --price-color: #0f0;
+    --light-color: rgba(22, 104, 159, 0.2);
+    --blue-color: rgba(10, 24, 34, 0.8);
+    --green-color: #677a0a;
+    --line-color: #44617496;
+    --dark-black-color: #182027;
+    --light-black-color: #1a252d;
+    --shadow-color: #0074c2;
+    --transparent-color: transparent;
+}
+
+html{
+  font-size:65%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    outline: 0;
+}
+
+body{
+  font-family: 'Jura', sans-serif;
+  font-size:14px;
+  line-height: 1.52;
+  background:black;
+  color:var(--body-color);
+  background: url(https://robertsspaceindustries.com/rsi/static/images/gridbg_glow.png), url(https://robertsspaceindustries.com/rsi/static/images/common/bg-stars-2560.jpg) repeat;
+  padding:4rem;
+}
+.container{
+  max-width:80%;
+  margin:0 auto;
+}
+
+h1,h2,h3,h4,h5{
+  text-transform:uppercase;
+  font-weight:700;
+  color:var(--primary-color);
+  text-shadow: 0 0 50px var(--shadow-color);
+}
+
+nav {
+  list-style:none;
+}
+nav li{
+  position:relative;
+  overflow:hidden;
+  display:inline-block;
+  padding: 1rem 2rem;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+}
+nav li:after{
+    content: '';
+  display:block;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    left: -110%;
+  margin-top:.7rem;
+      -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+}
+nav li:hover:after{
+  left:0;
+  background: #42EDF8;
+    box-shadow: 0 0 15px 3px rgba(0, 112, 202, 0.6), 0 -15px 25px 0 rgba(11, 183, 226, 0.65);
+}
+
+nav li a{
+  color:var(--body-color);
+  text-transform:uppercase;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+}
+
+nav li:hover a{
+  color:var(--white-color);
+  opacity:1;
+}
+
+.radio, .radio:hover{
+    color:var(--white-color);
+}
+.radio:hover{
+  color:var(--primary-color);
+  text-decoration:none;
+}
+
+
+.radio:before {
+  content:'';
+    width: 21px;
+    height: 21px;
+  margin-right:.5rem;
+    background: url(https://robertsspaceindustries.com/rsi/static/images/store/radio-pager-small.png) no-repeat center center;
+      display: inline-block;
+    vertical-align: middle;
+}
+
+.radio:hover:before {
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    background: url(https://robertsspaceindustries.com/rsi/static/images/store/radio-pager-on-small.png) no-repeat 0 0, url(https://robertsspaceindustries.com/rsi/static/images/store/radio-pager-small.png) no-repeat 0 0;
+}
+
+.radio:hover:before{
+    transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+}
+.radio:before {
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+}
+
+.clearfix:after, .clearfix:before, .nav:after, .nav:before {
+    content: " ";
+    display: table;
+}
+.clearfix:after, .nav:after {
+    clear: both;
+}
+
+.widjet{
+  position:relative;
+  background:var(--light-color);
+  border:.1rem solid var(--light-color);
+  padding: 0 2rem;
+  max-width:30rem;
+}
+
+.widjet:after{
+  content:'';
+  display:block;
+  position:absolute;
+  bottom:-.2rem;
+  left:50%;
+  transform:translateX(-50%);
+  width:5rem;
+  border-bottom:.3rem solid var(--primary-color);
+  box-shadow: 0 0 15px 3px rgba(0, 112, 202, 0.6), 0 -15px 25px 0 rgba(11, 183, 226, 0.65);
+}
+
+.widget-title{
+  background:url(https://robertsspaceindustries.com/rsi/static/images/expandbtn-bg.png) repeat-x;
+  font-size:1rem;
+  padding:1rem 2rem;
+    margin:0 -2rem 1rem;
+}
+
+.widjet ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.widjet li{
+  margin-bottom:1rem;
+  display:block;
+  width:100%;
+}
+.recentpost_title{
+  position:relative;
+    padding-top: 6px;
+    display: block;
+    line-height: 1.45;
+  margin-bottom:1.5rem;
+}
+.recentpost_title:before,
+.recentpost_title:after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+    width: 7rem;
+    height: 1px;
+  background-color: var(--line-color);
+}
+.recentpost_title:after{
+    border-width: 0 1px;
+    border-style: solid;
+    border-color: var(--green-color);
+}
+
+.recentpost_date:before{
+  content:'дата:';
+  color:var(--white-color);
+  opacity:.75;
+  margin-right:.5rem;
+}
+
+.recentpost_date{
+  line-height: 12px;
+    float: left;
+    font-size: 10px;
+    padding-bottom: 5px;
+}
+
+
+.sub:before{
+  content:'';
+  width:3rem;
+  height:.1rem;
+  background-color: var(--primary-color);
+  display: inline-block;
+  margin: 0 1rem .26rem -3.6rem;
+}
+.sub{
+  color:var(--white-color);
+  opacity:.6;
+  font-size:10px;
+  font-style:italic;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  margin-bottom:0;
+}
+
+.columns .sub{
+  color:var(--secondary-color);
+}
+
+hr{
+  border-color:var(--line-color);
+  position: relative;
+}
+
+hr:before{left:0;}
+hr:after{right:0;}
+
+hr:before, hr:after{
+    content: '';
+    height: 1px;
+    width: 1px;
+    display: block;
+    position: absolute;
+    left: -1px;
+    background-color: #677a0a;
+}
+
+.price{
+  color:var(--price-color);
+}
+
+.btn{
+  background-color:var(--light-color);
+  background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+  padding:1rem 2rem;
+  color:var(--primary-color);
+  text-decoration:none;
+  margin:.3rem;
+  display:inline-block;
+  border-left: .2rem solid var(--primary-color);
+  position:relative;
+  overflow:hidden;
+  text-indent:0;
+}
+
+.btn-2{
+  background-color:var(--light-color);
+  background-image: url(https://robertsspaceindustries.com/rsi/static/images/content-page/horizontal-lined-bg.png);
+  padding:1rem 2rem;
+  color:var(--white-color);  
+  border:.1rem solid var(--light-color);
+  text-indent:0;
+}
+
+.btn-2:hover{
+  color:var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+a{
+  color:var(--secondary-color);
+  opacity:.7;
+  text-decoration:none;
+}
+
+a:hover{
+  opacity:1;
+  text-decoration:none;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+}
+
+.btn span{
+  position:relative;
+  display:inline-block;
+  z-index:2;
+}
+
+.btn:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    z-index: 1;
+    -webkit-transition: all .6s;
+    -moz-transition: all .6s;
+    transition: all .6s;
+    background: var(--blue-color);
+}
+
+.btn:hover:before {
+    width: 100%;
+  z-index:0;
+}
+
+.btn:hover{
+  color:var(--secondary-color);
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+}
+
+
+p{
+  text-indent:2rem;
+}
+
+.img:before{
+  content:'';
+  background: url(https://robertsspaceindustries.com/rsi/static/images/community/streamer-filet-texture.png);
+  width:100%;
+  height:100%;
+  display:block;
+  position:absolute;
+  z-index:1;
+}
+.img{
+  position:relative;
+  display:inline-block;
+}
+
+.img, .btn{
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+
+.img:hover:before{
+  opacity:0;
+}
+img{
+  opacity:.85;
+}
+.container{
+  width:1170
+}
+.block-wide {
+    padding: 3rem 0;
+    background-color: rgba(0, 0, 0, .5);
+    margin: 0 -4rem;
+    background-image: url(https://robertsspaceindustries.com/rsi/static/images/common/hexagons.png);
+    border-top: .2rem solid var(--line-color);
+    border-bottom: .2rem solid var(--line-color);
+}
+
+/* create footer */
+footer{
+    padding: 1rem 0;
+    background-color: rgba(14, 4, 4, 0.356);
+    margin: 0 -4rem;
+    background-image: url(https://robertsspaceindustries.com/rsi/static/images/common/hexagons.png);
+    border-top: .2rem solid var(--line-color);
+    position: fixed; 
+    bottom: 0; 
+    width: 100%; height: 50px;
+    text-align: center;
+}
+
+/*COLUMNS STYLE*/
+.columns{
+  width:100%;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.columns:before, .columns:after{
+  content:'';
+  width:100%;
+  height:16px;
+  background:url(https://robertsspaceindustries.com/rsi/static/images/game/ship-matrix/rulertop.png);
+  margin: 2rem;
+}
+
+.columns{
+  margin:2rem auto;
+  display: -webkit-flex;
+  display:flex;
+  
+  -webkit-flex-direction:row;
+  flex-direction: row;
+  
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  
+  -webkit-justify-content: center;
+  justify-content: center;
+  
+  /*заполнение дочерних элементов*/
+  -webkit-align-items: stretch; /* Safari */
+  align-items: stretch;
+  
+  -webkit-align-content: stretch;
+  align-content: stretch;
+}
+.columns li:nth-of-type(1){
+  border:0;
+}
+
+.columns li:before{top:0;}
+.columns li:after{bottom:0;}
+
+.columns li:before,.columns li:after{
+    content: '';
+    height: 1px;
+    width: 1px;
+    display: block;
+    position: absolute;
+    left: -1px;
+    background-color: #677a0a;
+}
+.columns li{
+ /* background:var(--light-color);*/
+  box-sizing:border-box;
+  padding:2rem;
+  border-left: 1px solid #08436a;
+  position:relative;
+  text-align:left;
+}
+.columns li h4{
+  text-align:left;
+  display:block;
+  width:100%;
+  font-size:1.8rem;
+  padding-left:5rem;
+}
+
+.columns li .btn{
+    margin: .5rem auto 0 0;
+}
+
+.services li{
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+
+.services li img{
+  position:absolute;
+  top: 2rem;
+  right:2rem;
+}
+
+.services li:hover{
+  background: rgba(0, 23, 43, 0.65);
+}
+
+.columns li{
+  display: -webkit-flex;
+  display:flex;
+  
+  -webkit-flex-direction:column;
+  flex-direction: column;
+    
+  /*вертикальное выравнивание*/
+  -webkit-justify-content: center;
+  justify-content: center;
+  /*горизонтальное выравнивание*/
+  -webkit-align-items: center; /* Safari */
+  align-items: center;
+  
+  -webkit-align-content: center;
+  align-content: flex-start;
+}
+
+.columns-6 li{
+  width: calc(100% / 6 - .1rem);
+}
+.columns-5 li{
+  width: calc(100% / 5 - .1rem);
+}
+.columns-4 li{
+  width: calc(100% / 4 - .1rem);
+}
+.columns-3 li{
+  width: calc(100% / 3 - .1rem);
+}
+.columns-2 li{
+  width: calc(100% / 2 - .1rem);
+}
+
+.columns li p{
+  color:white;
+  font-size:12px;
+width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  text-align:left;
+  font-style:italic;
+  margin: 0 0 2rem;
+}
